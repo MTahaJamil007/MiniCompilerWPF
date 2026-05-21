@@ -8,7 +8,7 @@ public class CompilerResult
     public string SyntaxTree { get; set; } = string.Empty;
     public List<CompilerError> Errors { get; } = [];
     public List<SymbolInfo> Symbols { get; } = [];
-    public List<string> IntermediateCode { get; } = [];
-    public List<string> OptimizedCode { get; } = [];
+    public List<TACInstruction> IntermediateCode { get; } = [];
+    public List<TACInstruction> OptimizedCode { get; } = [];
     public List<string> TargetCode { get; } = [];
 }

@@ -1,4 +1,4 @@
-namespace MiniCompilerWPF.CompilerCore;
+namespace MiniCompilerWPF.Models;
 
 public enum TokenType
 {
