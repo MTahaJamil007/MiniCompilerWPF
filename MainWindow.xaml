@@ -1,0 +1,39 @@
+<Window x:Class="MiniCompilerWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mini Compiler Construction Studio" Height="840" Width="1300" Background="#101826">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Background="#1B263B" CornerRadius="10" Padding="12" Margin="0 0 0 10">
+            <StackPanel>
+                <TextBlock Text="Mini Compiler Construction Studio" FontSize="24" Foreground="White" FontWeight="Bold"/>
+                <TextBlock Text="Course: Compiler Construction Lab - Final Project | Instructor: Dr Arslan Ali Raza" Foreground="#BFD8FF"/>
+                <TextBlock Text="Member 1: Moaz Saeed (Sp23-Bcs-031) | Member 2: Areeba Khan (Sp23-Bcs-016)" Foreground="#BFD8FF"/>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="1.1*"/><ColumnDefinition Width="1.4*"/></Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                <TextBlock Text="Source Code Editor" Foreground="White" FontWeight="Bold"/>
+                <TextBox Name="SourceCodeBox" AcceptsReturn="True" Height="540" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" Background="#0B1220" Foreground="#E4ECFF" TextWrapping="Wrap"/>
+                <WrapPanel Margin="0 10 0 0">
+                    <Button Content="Run All Phases" Click="RunAll_Click" Margin="0 0 8 8" Padding="10 6"/>
+                    <Button Content="Clear" Click="Clear_Click" Margin="0 0 8 8" Padding="10 6"/>
+                    <ComboBox Name="TestCaseCombo" Width="260" SelectionChanged="TestCaseCombo_SelectionChanged"/>
+                </WrapPanel>
+            </StackPanel>
+            <TabControl Grid.Column="1" Background="#152238" Foreground="White">
+                <TabItem Header="Tokens"><DataGrid Name="TokensGrid" AutoGenerateColumns="True"/></TabItem>
+                <TabItem Header="Syntax Analysis"><TextBox Name="SyntaxBox" AcceptsReturn="True" IsReadOnly="True"/></TabItem>
+                <TabItem Header="Semantic Analysis"><DataGrid Name="SymbolGrid" AutoGenerateColumns="True"/></TabItem>
+                <TabItem Header="IR Code"><TextBox Name="IrBox" AcceptsReturn="True" IsReadOnly="True"/></TabItem>
+                <TabItem Header="Optimized IR"><TextBox Name="OptIrBox" AcceptsReturn="True" IsReadOnly="True"/></TabItem>
+                <TabItem Header="Target Code"><TextBox Name="TargetBox" AcceptsReturn="True" IsReadOnly="True"/></TabItem>
+                <TabItem Header="Errors"><DataGrid Name="ErrorGrid" AutoGenerateColumns="True"/></TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>
